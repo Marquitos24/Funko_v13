@@ -2,6 +2,7 @@
 using Funkos.Errors;
 using Funkos.Helper;
 using Funkos.Service.Categoria;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Funkos.Controller;
@@ -9,7 +10,7 @@ namespace Funkos.Controller;
 
 [ApiController]
 [Route("api/[controller]")]
-public class CategoriaController(ICategoriaService service) : ControllerBase
+public class CategoriaController(ICategoriaService service, ILogger<CategoriaController> logger) : ControllerBase
 {
     [HttpGet]
     public async Task<ActionResult<List<CategoriaDtoResponse>>> GetAllAsync(CancellationToken cancellationToken)
@@ -22,6 +23,7 @@ public class CategoriaController(ICategoriaService service) : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<CategoriaWithFunkosResponseDto>> GetByIdAync([FromRoute] string id, CancellationToken cancellationToken)
     {
         var resultado = await service.GetByIdAsync(id, cancellationToken);
@@ -35,6 +37,7 @@ public class CategoriaController(ICategoriaService service) : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<CategoriaDtoResponse>> CreateAsync([FromBody] CategoriaCreateDto dto, CancellationToken cancellationToken)
     {
         var resultado = await service.AddAsync(dto, cancellationToken);
@@ -53,6 +56,7 @@ public class CategoriaController(ICategoriaService service) : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<CategoriaDtoResponse>> UpdateAsync([FromRoute] string id,
         [FromBody] CategoriaUpdateDto dto, CancellationToken cancellationToken)
     {
@@ -67,6 +71,7 @@ public class CategoriaController(ICategoriaService service) : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<bool>> DeleteAsync([FromRoute] string id, CancellationToken cancellationToken)
     {
         var deleted = await service.DeleteAsync(id, cancellationToken);

@@ -5,6 +5,7 @@ using Funkos.Dto;
 using Funkos.Errors;
 using Funkos.Helper;
 using Funkos.Service.Storage;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Funkos.Controller;
 
@@ -26,6 +27,7 @@ public class FunkoController(IFunkoService service, ILogger<FunkoController> _lo
     }
 
     [HttpGet("{id:long}")]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<FunkosDtoResponse>> GetByIdAync([FromRoute] long id,
         CancellationToken cancellationToken)
     {
@@ -40,6 +42,7 @@ public class FunkoController(IFunkoService service, ILogger<FunkoController> _lo
     }
 
     [HttpPost]
+    [Authorize(Policy = "RequireAdmin")]
     [ProducesResponseType(typeof(FunkosDtoResponse), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<FunkosDtoResponse>> CreateAsync([FromForm] FunkoCreateDto dto,
@@ -61,6 +64,7 @@ public class FunkoController(IFunkoService service, ILogger<FunkoController> _lo
     }
 
     [HttpPut("{id:long}")]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<FunkosDtoResponse>> UpdateAsync([FromRoute] long id, [FromForm] FunkoUpdateDto dto,
         CancellationToken cancellationToken)
     {
@@ -74,6 +78,7 @@ public class FunkoController(IFunkoService service, ILogger<FunkoController> _lo
     }
 
     [HttpDelete("{id:long}")]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<bool>> DeleteAsync([FromRoute] long id, CancellationToken cancellationToken)
     {
         var deleted = await service.DeleteAsync(id, cancellationToken);

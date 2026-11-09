@@ -10,6 +10,8 @@
     <ItemGroup>
         <PackageReference Include="CSharpFunctionalExtensions" Version="3.7.0" />
         <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.14" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.14" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.14" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
@@ -17,7 +19,9 @@
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.14" />
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.23.0" />
         <PackageReference Include="MongoDB.Driver" Version="3.13.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
         <PackageReference Include="Scrutor" Version="7.0.0" />
         <PackageReference Include="Serilog" Version="4.4.1-dev-02447" />
@@ -33,7 +37,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Dto\Storage\" />
       <Folder Include="logs\" />
       <Folder Include="wwwroot\.gitkeep\" />
       <Folder Include="wwwroot\uploads\images\" />

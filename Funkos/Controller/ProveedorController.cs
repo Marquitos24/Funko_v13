@@ -2,6 +2,7 @@
 using Funkos.Errors;
 using Funkos.Helper;
 using Funkos.Service.Proveedor;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 
@@ -12,6 +13,7 @@ namespace Funkos.Controller;
 public class ProveedorController(IProveedorService service) : ControllerBase
 {
     [HttpGet]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<IEnumerable<ProveedorDtoResponse>>> GetAllAsync(CancellationToken cancellationToken)
     {
        var resultado = await service.GetAllAsync(cancellationToken);
@@ -23,6 +25,7 @@ public class ProveedorController(IProveedorService service) : ControllerBase
     }
     
     [HttpGet("{id}")]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<ProveedorDtoResponse>> GetByIdAync(string id, CancellationToken cancellationToken)
     {
         if (!ObjectId.TryParse(id, out var objectId))
@@ -39,6 +42,7 @@ public class ProveedorController(IProveedorService service) : ControllerBase
     }
     
     [HttpPost]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<ProveedorDtoResponse>> CreateAsync([FromBody] ProveedorCreateDto dto, CancellationToken cancellationToken)
     {
         var resultado = await service.AddAsync(dto, cancellationToken);
@@ -55,6 +59,7 @@ public class ProveedorController(IProveedorService service) : ControllerBase
     }
     
     [HttpPut("{id}")]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<ProveedorDtoResponse>> UpdateAsync([FromRoute] string id, [FromBody] ProveedorUpdateDto dto, CancellationToken cancellationToken)
     {
         if (!ObjectId.TryParse(id, out var objectId))
@@ -70,6 +75,7 @@ public class ProveedorController(IProveedorService service) : ControllerBase
     }
     
     [HttpDelete("{id}")]
+    [Authorize(Policy = "RequireAdmin")]
     public async Task<ActionResult<bool>> DeleteAsync([FromRoute] string id, CancellationToken cancellationToken)
     {
         if (!ObjectId.TryParse(id, out var objectId))

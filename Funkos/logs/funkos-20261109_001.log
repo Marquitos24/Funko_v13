@@ -1,0 +1,88 @@
+2026-11-09 16:52:50.844 +01:00 [INF] Rol creado: ADMIN
+2026-11-09 16:52:50.898 +01:00 [INF] Rol creado: USER
+2026-11-09 16:57:26.879 +01:00 [INF] Usuario admin creado: admin@admin.com
+2026-11-09 16:57:27.001 +01:00 [INF] Usuario normal creado: user@user.com
+2026-11-09 16:57:39.462 +01:00 [INF] Creando usuario
+2026-11-09 16:57:39.466 +01:00 [WRN] Error de registro de usuario
+2026-11-09 16:58:06.207 +01:00 [INF] Creando usuario
+2026-11-09 16:58:06.243 +01:00 [INF] Asignando rol de usuario
+2026-11-09 16:58:29.229 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Input string was not in a correct format. Failure to parse near offset 23. Format item ends prematurely.
+   at System.Text.CompositeFormat.Parse(String format)
+   at Microsoft.Extensions.Logging.LogValuesFormatter..ctor(String format)
+   at Microsoft.Extensions.Logging.FormattedLogValues.<>c.<.ctor>b__10_0(String f)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.Logging.FormattedLogValues..ctor(String format, Object[] values)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogInformation(ILogger logger, String message, Object[] args)
+   at Funkos.Controller.AuthIdentityController.Login(LoginRequest request) in C:\Users\Marcos\Documents\Proyectos\Back-end\C#\Funkos\Funkos\Controller\AuthIdentityController.cs:line 82
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2026-11-09 16:59:28.366 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Input string was not in a correct format. Failure to parse near offset 23. Format item ends prematurely.
+   at System.Text.CompositeFormat.Parse(String format)
+   at Microsoft.Extensions.Logging.LogValuesFormatter..ctor(String format)
+   at Microsoft.Extensions.Logging.FormattedLogValues.<>c.<.ctor>b__10_0(String f)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.Logging.FormattedLogValues..ctor(String format, Object[] values)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogInformation(ILogger logger, String message, Object[] args)
+   at Funkos.Controller.AuthIdentityController.Login(LoginRequest request) in C:\Users\Marcos\Documents\Proyectos\Back-end\C#\Funkos\Funkos\Controller\AuthIdentityController.cs:line 82
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2026-11-09 17:01:01.277 +01:00 [INF] Usuario Pablo encontrado
+2026-11-09 17:08:25.990 +01:00 [INF] Usuario Pablo encontrado
+2026-11-09 17:10:13.950 +01:00 [INF] Usuario Pablo encontrado
+2026-11-09 17:14:19.793 +01:00 [INF] Usuario Pablo encontrado
+2026-11-09 17:16:09.084 +01:00 [INF] Usuario Pablo encontrado
+2026-11-09 17:53:44.676 +01:00 [INF] Usuario admin encontrado
+2026-11-09 18:05:01.293 +01:00 [INF] Usuario admin encontrado
+2026-11-09 18:05:06.120 +01:00 [WRN] Usuario NO encontrado
+2026-11-09 18:08:30.382 +01:00 [WRN] Usuario NO encontrado
+2026-11-09 18:08:31.296 +01:00 [WRN] Usuario NO encontrado
+2026-11-09 18:08:32.050 +01:00 [WRN] Usuario NO encontrado
+2026-11-09 18:08:32.787 +01:00 [WRN] Usuario NO encontrado
+2026-11-09 18:08:33.360 +01:00 [WRN] Usuario NO encontrado
+2026-11-09 18:12:49.754 +01:00 [INF] Usuario user encontrado
+2026-11-09 18:18:33.578 +01:00 [INF] Obteniendo Funkos paginados - Página: 0, Tamaño: 10
+2026-11-09 18:22:07.709 +01:00 [INF] Usuario user encontrado
+2026-11-09 18:22:11.653 +01:00 [INF] Usuario admin encontrado
+2026-11-09 18:28:02.140 +01:00 [INF] Buscando Funko 1
+2026-11-09 18:28:02.176 +01:00 [WRN] Funko 1 NO encontrado 
+2026-11-09 18:28:02.179 +01:00 [WRN] Funko 1 NO encontrado 
+2026-11-09 18:28:11.191 +01:00 [INF] Buscando Funko 1
+2026-11-09 18:28:11.196 +01:00 [WRN] Funko 1 NO encontrado 
+2026-11-09 18:28:11.199 +01:00 [WRN] Funko 1 NO encontrado 
+2026-11-09 18:28:13.502 +01:00 [INF] CACHE HIT: funkos:v0:FunkoFilterDto { Name = , PrecioMax = , PrecioMin = , Categoria = , IsDeleted = , StockMin = , Page = 0, Size = 10, SortBy = id, Direction = asc }
+2026-11-09 18:28:18.549 +01:00 [INF] Buscando Funko 3
+2026-11-09 18:28:18.553 +01:00 [WRN] Funko 3 NO encontrado 
+2026-11-09 18:29:16.218 +01:00 [INF] Listar Categorias
+2026-11-09 18:31:17.945 +01:00 [INF] Listar Proveedores
+2026-11-09 18:51:31.887 +01:00 [INF] Usuario admin encontrado
+2026-11-09 18:51:47.986 +01:00 [INF] Usuario user encontrado
+2026-11-09 18:56:13.685 +01:00 [INF] Usuario admin encontrado
+2026-11-09 18:56:13.920 +01:00 [INF] Usuario admin con inicio de sesion el "2026-11-09T17:56:13.7543049Z"
+2026-11-09 18:56:34.503 +01:00 [INF] Usuario user encontrado
+2026-11-09 18:56:34.601 +01:00 [INF] Usuario user con inicio de sesion el "2026-11-09T17:56:34.5889720Z"
+2026-11-09 18:56:57.860 +01:00 [INF] Usuario admin encontrado
+2026-11-09 18:56:57.974 +01:00 [WRN] Contraseña incorrecta del usuario
